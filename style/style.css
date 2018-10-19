@@ -1,0 +1,6 @@
+.make-me-fullscreen {
+	height: 100vh;
+	width: 100%;
+	background-image: url('../images/baby-background.jpg');
+	background-size: cover;
+
