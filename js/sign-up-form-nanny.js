@@ -3,7 +3,8 @@ $("#registration").click(function(){
 	var address = document.getElementById("adress").value;
 	var personalCode = document.getElementById("personalCode").value;
 	var email = document.getElementById("email").value;
-	let post = {nameAndSurname:nameAndSurname, address:address, personalCode:personalCode, email:email};
+	var password = document.getElementById("password").value;
+	let post = {nameAndSurname:nameAndSurname, address:address, personalCode:personalCode, email:email, password:password};
 		console.log(nameAndSurname);
 		alert("post", post);
 		//Post
