@@ -4,10 +4,14 @@
 const index = 'Aukle3000', list = 'Filtered list', details = 'Details about nanny';
 
 // GET
-	// render ejs
 exports.Render = function(req, res, next){
 	res.render('index', {title: index});
 };
+exports.AccountNanny = function(req, res, next){
+	res.render('account-nanny', {title: 'Account'});
+};
+
+
 
 exports.RegisterNanny = function(req, res, next){
 	res.render('auth/sign-up-form-nanny', { message: req.flash('signupMessage') })
@@ -19,7 +23,7 @@ exports.RegisterNannySave = function (req, res, next) {
 	
 	users.insert({name:'test'},function(err, user){
 				if (err) return next(err);
-				res.send({user:user.ops});
+				res.redirect('/account/nanny');
 			});
 		
 

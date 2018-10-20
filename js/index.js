@@ -11,7 +11,7 @@ $(".n-find").click(function(){
 		, post = {region:region, begindate:begindate, begintime:begintime, enddate:enddate, endtime:endtime, 
 			child_count:child_count, animal:animal};
 	console.log("post", post);
-	http.post(post);
+	http.post('/',post);
 });
 
 
