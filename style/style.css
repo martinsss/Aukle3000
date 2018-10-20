@@ -1,13 +1,35 @@
+body {
+	font-family: 'Raleway', sans-serif;
+}
+
+
 .make-me-fullscreen {
 	height: 100vh;
 	background-image: url('../images/baby-backgroud-dark.jpg');
 	background-size: cover;
 }
 
-.form-horizontal {
+.date-style {
+	text-align: center;
 }
 
-.time-date {
-	margin-left: auto;
-	margin-right: auto;
+.form-style {
+	background-color: rgba(255, 255, 255, 0.2);;
+	padding: 10px;
+	border-radius: 10px;
+	margin-top: 50px;
+}
+
+.form-name {
+	font-family: 'Raleway', sans-serif;
+	font-size: 2em;
+	text-align: center;
+	margin-top: 5px;
+	font-weight: bold;
+}
+.form-name-s {
+	font-family: 'Raleway', sans-serif;
+	font-size: 1em;
+	text-align: center;
+	margin-top: 5px;
 }
