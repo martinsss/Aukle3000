@@ -27,7 +27,7 @@ exports.RegisterNannySave = function (req, res, next) {
 	users.insertOne({nameAndSurname: body.nameAndSurname, address: body.address, personalCode: body.personalCode, email: body.email, password: body.password},function(err, user){
 				if (err) return next(err);
 				console.log('account/nanny')
-				res.send({url:'/account/nanny'});
+				res.send({redirect:'/account/nanny'});
 			});
 		
 
