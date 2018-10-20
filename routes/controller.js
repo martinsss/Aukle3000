@@ -1,7 +1,7 @@
 'use strict';
 //const f = require('../controllers/functions');
 
-const index = 'Aukle3000', list = 'Filtered list', details = 'Details about nanny';
+const index = 'Aukle3000Test', list = 'Filtered list', details = 'Details about nanny';
 
 // GET
 	// render ejs
