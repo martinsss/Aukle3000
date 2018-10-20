@@ -11,6 +11,9 @@ body {
 
 .make-me-fullscreen-without-image {
 		height: 100vh;
+			background-image: url('../images/childish-white.jpg');
+
+
 
 }
 
@@ -78,9 +81,7 @@ button.btn.btn-outline-success {
 .container.plus {
     margin-top: 50px;
 }
-.container {
-    margin-top: 50px;
-}
+
 .filter .row {
     padding-bottom: 50px;
 	border-bottom: 1px solid#000000;
@@ -151,4 +152,19 @@ button.btn.btn-outline-success {
 .container .photo {
     text-align: center;
 }
+}
+
+li {
+	list-style: none;
+}
+
+
+.first-text-line {
+	font-size: 30px;
+	font-weight: bold;
+}
+
+.smaller-text-line {
+	font-size: 20px;
+	font-weight: bold;
 }
