@@ -3,7 +3,7 @@ module.exports = function(app, passport) {
     const router = express.Router();
 
 // controller 
-<<<<<<< HEAD
+
 const Controller = require('../routes/controller.js');
 
 // index
@@ -14,20 +14,10 @@ router.post('/', Controller.Index);
 router.get('/register/nanny', Controller.RegisterNanny);
 //router.get('/register/parent', Controller.RegisterParent);
 
-
-
 router.get('/list', Controller.List);
 router.get('/item', Controller.Item);
-=======
-    const Controller = require('../routes/controller.js');
 
-    router.get('/', Controller.Render);
-    router.post('/', Controller.Index);
-
-    router.get('/list', Controller.List);
-    router.get('/item', Controller.Item);
->>>>>>> f95b63e641a8f8126fd244b8d4233ba825df5579
-//router.get('/test', tictactoeController.test);
+ //router.get('/test', tictactoeController.test);
 //router.post('/', tictactoeController.gameP);
 
     // auth
