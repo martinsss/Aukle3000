@@ -23,9 +23,7 @@ router.get('/list', Controller.List);
 router.get('/item', Controller.Item);
 
 
-
-
- //router.get('/test', tictactoeController.test);
+//router.get('/test', tictactoeController.test);
 //router.post('/', tictactoeController.gameP);
 
     // auth

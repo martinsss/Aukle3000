@@ -8,10 +8,13 @@ exports.Render = function(req, res, next){
 	res.render('index', {title: index});
 };
 exports.AccountNanny = function(req, res, next){
-	res.render('account-nanny', {title: 'Account'});
+	let db = req.app.locals.db, users = db.collection('users');
+	users.find().toArray(function(err, results){
+		if (err) return next(err);
+		res.render('account-nanny', {users: results});		
+	});
+	
 };
-
-
 
 exports.RegisterNanny = function(req, res, next){
 	res.render('auth/sign-up-form-nanny', { message: req.flash('signupMessage') })
