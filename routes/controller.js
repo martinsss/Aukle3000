@@ -24,9 +24,10 @@ exports.RegisterNannySave = function (req, res, next) {
     console.log("test");
 	var db = req.app.locals.db, users = db.collection('users'), body = req.body;
 	console.log("post", body);
-	users.insert({nameAndSurname: body.nameAndSurname, address: body.address, personalCode: body.personalCode, email: body.email, password: body.password},function(err, user){
+	users.insertOne({nameAndSurname: body.nameAndSurname, address: body.address, personalCode: body.personalCode, email: body.email, password: body.password},function(err, user){
 				if (err) return next(err);
-				res.redirect('/account/nanny');
+				console.log('account/nanny')
+				res.send({redirect:'/account/nanny'});
 			});
 		
 

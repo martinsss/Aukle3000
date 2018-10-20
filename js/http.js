@@ -18,8 +18,9 @@ var http = (function (){
 				contentType: "application/json; charset=utf-8",
 				dataType: 'json',
 				data: JSON.stringify(data),
-				success: function(data) {			
-					console.log('http post',data);
+				success: function(data) {
+					if ('redirect' in data)
+						window.location.replace(data.redirect);	
 				},
 			});	
 		}
