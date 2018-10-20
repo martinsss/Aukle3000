@@ -1,10 +1,158 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-<title><%=title%></title>
+	<title>Auklių paslaugos</title>
+	<meta charset="utf-8">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+  <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+
+<!-- additional code -->
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.47/js/bootstrap-datetimepicker.min.js"></script>
+
+<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.47/css/bootstrap-datetimepicker.css">
+
+
+<link href="/css/style.css" rel="stylesheet" type="text/css">
+
 </head>
 <body>
-	<h1><%=title%></h1>
+	<!-- Navbar -->
+	<nav class="navbar navbar-expand-lg navbar-light bg-transparent">
+		<a class="navbar-brand" href="#">Auklė 3000</a>
+		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+			<span class="navbar-toggler-icon"></span>
+		</button>
+		<div class="collapse navbar-collapse" id="navbarSupportedContent">
+			<ul class="navbar-nav mr-auto">
+				<li class="nav-item active">
+					<a class="nav-link" href="#">Pagrindinis <span class="sr-only">(current)</span></a>
+				</li>
+				<li class="nav-item active">
+					<a class="nav-link" href="#">Auklės <span class="sr-only">(current)</span></a>
+				</li>
+			</li>		
+		</ul>
+	</div>
+</nav>
+
+<!-- First page -->
+<div class="make-me-fullscreen">
+	<div class="container">
+		<div class="row">
+			<div class="col-12">
+
+<!-- Form  -->
+<form class="form-horizontal">
+<fieldset>
+
+<!-- Form Name -->
+<legend>Suraskite auklę</legend>
+
+<!-- Select Basic -->
+<div class="form-group">
+  <label class="col-md-4 control-label" for="selectbasic"></label>
+  <div class="col-md-4">
+    <select id="selectbasic" name="selectbasic" class="form-control n-region">
+      <option value="0">Pasirinkitę vietą</option>
+      <option value="r1">Žirmūnai</option>
+      <option value="r2">Antakalnis</option>
+      <option value="r3">Fabijoniškės</option>
+      <option value="r4">Šeškinė</option>
+      <option value="r5">Naujininkai</option>
+      <option value="r6">Naujoji</option>
+      <option value="r7">Lazdynai</option>
+      <option value="r8">Karoliniškės</option>
+      <option value="r9">Justiniškės</option>
+      <option value="r10">Naujamiestis</option>
+      <option value="r11">Pašilaičiai</option>
+      <option value="r12">Senamiestis</option>
+      <option value="r13">Šnipiškės</option>
+      <option value="r14">Viršuliškės</option>
+      <option value="r15">Pilaitė</option>
+      <option value="r16">Žvėrynas</option>
+      <option value="r17">Grigiškės</option>
+      <option value="r18">Paneriai</option>
+      <option value="r19">Užupis</option>
+      <option value="r20">Gariūnai</option>
+      <option value="r21">Belmontas</option>
+      <option value="r22">Valakampiai</option>
+      <option value="r23">Liepkalnis</option>
+      <option value="r24">Baltupiai</option>
+      <option value="r25">Jeruzalė</option>
+      <option value="r26">Saltoniškės</option>
+      <option value="r27">Santariškės</option>
+      <option value="r28">Jeruzalė</option>
+      <option value="r29">Saulėtekis</option>
+      <option value="r30">Verkiai</option>
+    </select>
+  </div>
+</div>
+
+<!-- Date and time picker -->
+<div class="form-group time-date n-begindate">
+	<label>Pradžios data</label> <br>
+<input type="date" name="beginningDate ">
+<input type="time" name="beginningTime"> <br>
+
+
+<div class="form-group time-date n-enddate">
+	<label>Pabaigos data</label> <br>
+<input type="date" name="endingDate">
+<input type="time" name="endingTime">
+
+
+
+</div> 
+
+<!-- Select Basic -->
+<div class="form-group">
+  <label class="col-md-4 control-label" for=""></label>
+  <div class="col-md-4">
+    <select id="" name="" class="form-control n-child-count">
+      <option value="0">Pasirinkite vaikų kiekį</option>
+      <option value="1">1</option>
+      <option value="2">2</option>
+      <option value="3">3</option>
+      <option value="4">4</option>
+      <option value="5">5</option>
+      <option value="More">Daugiau</option>
+    </select>
+  </div>
+</div>
+
+<!-- Select Basic -->
+<div class="form-group">
+  <label class="col-md-4 control-label" for="selectbasic"></label>
+  <div class="col-md-4">
+    <select id="selectbasic" name="selectbasic" class="form-control n-animal">
+      <option value="0">Ar turite gyvūną?</option>
+      <option value="petDog">Šunys</option>
+      <option value="petCat">Katinai</option>
+      <option value="petNo">Neturime</option>
+    </select>
+  </div>
+</div>
+
+<!-- Button -->
+<div class="form-group">
+  <label class="col-md-4 control-label" for="singlebutton"></label>
+  <div class="col-md-4">
+    <button id="singlebutton" name="singlebutton" class="btn btn-inverse n-find">Ieškoti</button>
+  </div>
+</div>
+
+</fieldset>
+</form>
+
+<!-- End of form -->
+
+</div>
+</div>
+</div>
+</div>
+
+<script src="/js/http.js"></script>
+<script src="/js/index.js"></script>
 </body>
 </html>

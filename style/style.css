@@ -1,101 +1,35 @@
+body {
+	font-family: 'Raleway', sans-serif;
+}
+
+
 .make-me-fullscreen {
 	height: 100vh;
-	width: 100%;
-	background-image: url('../images/baby-background.jpg');
+	background-image: url('../images/baby-backgroud-dark.jpg');
 	background-size: cover;
 }
-/*.filter { 
-   background: #ffffff !important;
-    position: fixed !important;
-    z-index: 9 !important;
-    height: 65px !important;
-	    display: inline-flex;
-}*/
-/*.dropdown-menu, .btn-outline-success {
-	width: 17%;
-	float: left;
-}*/
-.dropdown {
-        margin-right: 2%;
-        margin-left: 2%;
-}
-button.btn.btn-outline-success {
-    height: 38px;
-}
-.container.plus {
-    margin-top: 50px;
-}
-.container {
-    margin-top: 50px;
-}
-.filter .row {
-    padding-bottom: 50px;
-	border-bottom: 1px solid#000000;
-}
-.container.plus .row {
-    background-color: #f8f9fa;
-	    padding: 15px;
-}
-.checked {
-    color: orange;
-}
-.stars {
-    margin-top: 10px;
-}
-.container.plus .col-lg-8 .col-lg-4 {
-    float: left;
-}
-.col-lg-8.text {
-    float: right;
-}
-.col-lg-8.text .card.border-primary {
-    width: 100%;
-	max-width: 100%!important;
-}
-.card.border-primary.mb-3 {
-    border: none;
-}
-.container.plus .col-lg-8 {
-    max-height: 200px;
-    border-bottom: 1px solid#000000;
-}
-.container.plus .col-lg-8.text {
-    border-bottom: 0px;
-}
-.container.plus .card-body.text-primary {
-    color: #000000!important;
-    background-color: #f8f9fa;
-}
-.container.plus .card-header {
-    background-color: #f8f9fa;
-    border: none;
+
+.date-style {
+	text-align: center;
 }
 
+.form-style {
+	background-color: rgba(255, 255, 255, 0.2);;
+	padding: 10px;
+	border-radius: 10px;
+	margin-top: 50px;
+}
 
-@media screen and (max-width: 1240px) {
-.dropdown {
-    width: 25%;
-	margin-left: 0px;
-	margin-right: 0px;
+.form-name {
+	font-family: 'Raleway', sans-serif;
+	font-size: 2em;
+	text-align: center;
+	margin-top: 5px;
+	font-weight: bold;
 }
-.filter .dropdown .btn {
-    width: 100%;
-    margin-top: 15px;
-}
-.filter .row .dropdown {
-    width: 100%;
-}
-.btn.btn-outline-success {
-    width: 100%;
-    margin-top: 15px;
-}
-.dropdown-menu.show {
-    width: 100%;
-    text-align: center;
-}
-}
-@media screen and (max-width: 400px) {
-.container .photo {
-    text-align: center;
-}
+.form-name-s {
+	font-family: 'Raleway', sans-serif;
+	font-size: 1em;
+	text-align: center;
+	margin-top: 5px;
 }
