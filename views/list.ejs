@@ -3,7 +3,10 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="initial-scale=1,maximum-scale=1,user-scalable=no">
-  <title>Intro to PopupTemplate - 4.9</title>
+  <title>Data-driven continuous color - 4.9</title>
+
+  <link rel="stylesheet" href="https://js.arcgis.com/4.9/esri/css/main.css">
+  <script src="https://js.arcgis.com/4.9/"></script>
 
   <style>
     html,
@@ -16,66 +19,93 @@
     }
   </style>
 
-  <link rel="stylesheet" href="https://js.arcgis.com/4.9/esri/css/main.css">
-  <script src="https://js.arcgis.com/4.9/"></script>
-
   <script>
     require([
       "esri/Map",
-      "esri/layers/FeatureLayer",
-      "esri/views/MapView"
+      "esri/views/MapView",
+      "esri/layers/FeatureLayer"
     ], function(
-      Map,
-      FeatureLayer,
-      MapView
+      Map, MapView, FeatureLayer, Legend
     ) {
 
-      // Create the map
-      var map = new Map({
-        basemap: "gray"
+      var defaultSym = {
+        type: "simple-fill", // autocasts as new SimpleFillSymbol()
+        outline: { // autocasts as new SimpleLineSymbol()
+          color: "lightgray",
+          width: 0.5
+        }
+      };
+
+      /*****************************************************************
+       * Set a color visual variable on the renderer. Color visual variables
+       * create continuous ramps that map low data values to weak or
+       * neutral colors and high data values to strong/deep colors. Features
+       * with data values in between the min and max data values are assigned
+       * a color proportionally between the min and max colors.
+       *****************************************************************/
+
+      var renderer = {
+        type: "simple", // autocasts as new SimpleRenderer()
+        symbol: defaultSym,
+        label: "% population in poverty by county",
+        visualVariables: [{
+          type: "color",
+          field: "OBJECTID",
+          normalizationField: "NR"/"NR",
+          stops: [
+          {
+            value: 1,
+            color: "#F8B195",
+            label: "<10%"
+          },
+          {
+            value: 20,
+            color: "#355C7D",
+            label: ">30%"
+          }]
+        }]
+      };
+
+	   var template = { // autocasts as new PopupTemplate()
+        title: "Seniūnija: {SENIUNIJA}",
+		content: [{
+          type: "fields",
+          fieldInfos: [{
+            fieldName: "OBJECTID",
+            label: "Laisvos auklės",
+            visible: true
+          }, {
+            fieldName: "NR",
+            label: "Vaikai be auklių",
+            visible: true,
+          }]
+        }]
+      };
+	  
+      var povLayer = new FeatureLayer({
+        url: "https://zemelapiai.vplanas.lt/arcgis/rest/services/Open_Data/Vilniaus_miesto_ribos/MapServer/1",
+        renderer: renderer,
+        outFields: ["*"],
+        popupTemplate: template
       });
 
-      // Create the MapView
+      var map = new Map({
+        basemap: "gray",
+        layers: [povLayer]
+      });
+
       var view = new MapView({
         container: "viewDiv",
         map: map,
         center: [25.270718, 54.711463],
         zoom: 11
       });
-
-      var template = { // autocasts as new PopupTemplate()
-        title: "Seniunija: {SENIUNIJA}",
-		content: [{
-          type: "fields",
-          fieldInfos: [{
-            fieldName: "OBJECTID",
-            label: "Available aukles",
-            visible: true
-          }, {
-            fieldName: "NR",
-            label: "Available vaikai",
-            visible: true,
-          }]
-        }]
-      };
-
-      // Reference the popupTemplate instance in the
-      // popupTemplate property of FeatureLayer
-      var featureLayer = new FeatureLayer({
-        url: "https://zemelapiai.vplanas.lt/arcgis/rest/services/Open_Data/Vilniaus_miesto_ribos/MapServer/1",
-        outFields: ["*"],
-        popupTemplate: template
-      });
-      map.add(featureLayer);
     });
   </script>
 </head>
 
 <body>
-	<h1><%=title%></h1>
   <div id="viewDiv"></div>
 </body>
-
-
 
 </html>

@@ -1,4 +1,4 @@
-module.exports = function(app, passport) {
+module.exports = function(passport) {
     const express = require('express');
     const router = express.Router();
 
@@ -23,11 +23,7 @@ router.get('/item', Controller.Item);
 router.get('/register/nanny', Controller.RegisterNanny);
 
 // process the signup form
-router.post('/signup', passport.authenticate('local-signup', {
-    successRedirect : '/profile', // redirect to the secure profile section
-    failureRedirect : '/signup', // redirect back to the signup page if there is an error
-    failureFlash : true // allow flash messages
-}));
+router.post('/register/nanny', Controller.RegisterNannySave(passport));
 
 
  //router.get('/test', tictactoeController.test);
