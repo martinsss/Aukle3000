@@ -41,6 +41,8 @@ button.btn.btn-outline-success {
 @media screen and (max-width: 1240px) {
 .dropdown {
     width: 25%;
+	margin-left: 0px;
+	margin-right: 0px;
 }
 .filter .dropdown .btn {
     width: 100%;
@@ -49,7 +51,7 @@ button.btn.btn-outline-success {
 .filter .row .dropdown {
     width: 100%;
 }
-button.btn.btn-outline-success {
+.btn.btn-outline-success {
     width: 100%;
     margin-top: 15px;
 }
