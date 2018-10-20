@@ -10,7 +10,7 @@ exports.Render = function(req, res, next){
 };
 
 exports.RegisterNanny = function(req, res, next){
-	res.render('sign-up-form-nanny', {title: 'RegisterNanny'});
+	res.render('auth/sign-up-form-nanny', { message: req.flash('signupMessage') })
 };
 
 /*exports.RegisterParent = function(req, res, next){

@@ -11,11 +11,24 @@ router.get('/', Controller.Render);
 router.post('/', Controller.Index);
 
 // register
-router.get('/register/nanny', Controller.RegisterNanny);
+
 //router.get('/register/parent', Controller.RegisterParent);
 
 router.get('/list', Controller.List);
 router.get('/item', Controller.Item);
+
+
+// SIGNUP =================================
+// show the signup form
+router.get('/register/nanny', Controller.RegisterNanny);
+
+// process the signup form
+router.post('/signup', passport.authenticate('local-signup', {
+    successRedirect : '/profile', // redirect to the secure profile section
+    failureRedirect : '/signup', // redirect back to the signup page if there is an error
+    failureFlash : true // allow flash messages
+}));
+
 
  //router.get('/test', tictactoeController.test);
 //router.post('/', tictactoeController.gameP);
@@ -50,19 +63,6 @@ router.get('/item', Controller.Item);
     router.post('/login', passport.authenticate('local-login', {
         successRedirect : '/profile', // redirect to the secure profile section
         failureRedirect : '/login', // redirect back to the signup page if there is an error
-        failureFlash : true // allow flash messages
-    }));
-
-    // SIGNUP =================================
-    // show the signup form
-    router.get('/signup', function(req, res) {
-        res.render('auth/signup.ejs', { message: req.flash('signupMessage') });
-    });
-
-    // process the signup form
-    router.post('/signup', passport.authenticate('local-signup', {
-        successRedirect : '/profile', // redirect to the secure profile section
-        failureRedirect : '/signup', // redirect back to the signup page if there is an error
         failureFlash : true // allow flash messages
     }));
 
