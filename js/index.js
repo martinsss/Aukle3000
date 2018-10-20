@@ -1,5 +1,5 @@
 
-//window.location.href = 'www.google.com';
+
 $(".n-find").click(function(){
 	let $this = $(this), region = $(".n-region").val()
 		, begindate = $(".n-date [name='beginningDate']").val()
