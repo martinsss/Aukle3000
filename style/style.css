@@ -4,13 +4,12 @@ body {
 
 
 .make-me-fullscreen {
-	height: 100vh;
 	background-image: url('../images/baby-backgroud-dark.jpg');
 	background-size: cover;
+	padding-bottom: 100px;
 }
 
 .make-me-fullscreen-without-image {
-		height: 100vh;
 			background-image: url('../images/childish-white.jpg');
 
 
