@@ -11,10 +11,10 @@ var http = (function (){
 				},
 			});
 		},
-		post: function(data){
+		post: function(url, data){
 			$.ajax({
 				type: 'POST',
-				url: '/',
+				url: url,
 				contentType: "application/json; charset=utf-8",
 				dataType: 'json',
 				data: JSON.stringify(data),
