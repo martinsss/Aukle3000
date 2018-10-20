@@ -10,7 +10,9 @@ body {
 }
 
 .make-me-fullscreen-without-image {
-		height: 100vh;
+	background-image: url('../images/childish-white.jpg');
+			background-size: auto;
+
 
 }
 
@@ -58,7 +60,7 @@ nav a {
 }
 
 .round-image {
-	width: 100%;
+	width: 50%;
 	border-radius: 50%;
 	margin-bottom: 50px;
 }
@@ -67,3 +69,17 @@ nav a {
 font-family: 'Charmonman', cursive;
 	font-size: 40px;
 }
+
+li {
+	list-style: none;
+}
+
+.first-text-line {
+	font-size: 30px;
+	font-weight: bold;
+}
+
+.smaller-text-line {
+	font-size: 20px;
+}
+
