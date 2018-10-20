@@ -16,8 +16,8 @@ exports.RegisterNanny = function(req, res, next){
 exports.RegisterNannySave = function (req, res, next) {
     console.log("test");
 	var db = req.app.locals.db, users = db.collection('users'), body = req.body;
-	
-	users.insert({name:'test'},function(err, user){
+	console.log("post", body);
+	users.insert({nameAndSurname: body.nameAndSurname, address: body.address, personalCode: body.personalCode, email: body.email, password: body.password},function(err, user){
 				if (err) return next(err);
 				res.send({user:user.ops});
 			});
@@ -47,5 +47,5 @@ exports.Item = function(req, res, next){
 // POST
 exports.Index = function(req, res, next){
 	var db = req.app.locals.db, body = req.body, type = body.type;
-	console.log('post', body);
+	console.log('post to index', body);
 };
