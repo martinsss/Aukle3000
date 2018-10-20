@@ -11,8 +11,8 @@ const indexR = require('./routes/index');
 
 
 // db
-//const mongo = require('mongodb');
-//const url = "mongodb://localhost:27017";
+const mongo = require('mongodb');
+const url = "mongodb://localhost:27017";
 
 
 // init app
@@ -32,16 +32,18 @@ app.set('view engine', 'ejs');
 
 
 // static folder
-app.use(express.static(path.join(__dirname, 'static')));
+app.use('/js', express.static(path.join(__dirname, 'js')));
+app.use('/css', express.static(path.join(__dirname, 'style')));
+app.use('/images', express.static(path.join(__dirname, 'images')));
 app.use('/modules', express.static(__dirname + '/node_modules'));
 
 
 // db
-/*(mongo.MongoClient.connect(url, { useNewUrlParser: true }, function(err, database){
+(mongo.MongoClient.connect(url, { useNewUrlParser: true }, function(err, database){
 		if (err) throw err;
-		app.locals.db = database.db('');
-}));*/
-
+		app.locals.db = database.db('aukle3000');
+		console.log('connected to db aukle3000');
+}));
 
 app.use('/', indexR);
 
