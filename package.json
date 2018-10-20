@@ -13,6 +13,12 @@
     "ejs": "^2.6.1",
     "express": "^4.16.4",
     "helmet": "^3.14.0",
-    "mongodb": "^3.1.8"
+    "mongodb": "^3.1.8",
+    "mongoose": "~4.13.1",
+    "passport": "~0.3.2",
+    "passport-local": "~1.0.0",
+    "connect-flash": "~0.1.1",
+    "bcrypt-nodejs": "latest",
+    "express-session": "~1.14.1"
   }
 }
