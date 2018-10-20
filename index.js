@@ -2,21 +2,30 @@ const express = require('express');
 const helmet = require('helmet');
 const path = require('path');
 const bodyParser = require('body-parser');
+var session = require('express-session');
+var flash    = require('connect-flash');
+var mongoose = require('mongoose');
 
 const port = 3000;
 const host = '0.0.0.0';
 
-
-const indexR = require('./routes/index');
-
-
 // db
 const mongo = require('mongodb');
 const url = "mongodb://localhost:27017";
-
+mongoose.connect(url); // connect to our database
 
 // init app
 const app = express();
+
+// auth
+var passport = require('passport');
+app.use(session({ secret: 'ilovescotchscotchyscotchscotch' })); // session secret
+app.use(passport.initialize());
+app.use(passport.session()); // persistent login sessions
+app.use(flash()); // use connect-flash for flash messages stored in session
+require('./config/passport')(passport);
+
+const indexR = require('./routes/index')(app, passport);
 
 // middleware
 app.use(helmet());
