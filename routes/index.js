@@ -11,6 +11,11 @@ router.get('/', Controller.Render);
 router.post('/', Controller.Index);
 
 // register
+router.get('/register/nanny', Controller.RegisterNanny);
+router.post('/register/nanny', Controller.RegisterNannySave);
+
+// account
+router.get('/account/nanny', Controller.AccountNanny);
 
 //router.get('/register/parent', Controller.RegisterParent);
 
@@ -18,15 +23,7 @@ router.get('/list', Controller.List);
 router.get('/item', Controller.Item);
 
 
-// SIGNUP =================================
-// show the signup form
-router.get('/register/nanny', Controller.RegisterNanny);
-
-// process the signup form
-router.post('/register/nanny', Controller.RegisterNannySave);
-
-
- //router.get('/test', tictactoeController.test);
+//router.get('/test', tictactoeController.test);
 //router.post('/', tictactoeController.gameP);
 
     // auth

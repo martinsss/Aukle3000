@@ -4,9 +4,16 @@
 const index = 'Aukle3000', list = 'Filtered list', details = 'Details about nanny';
 
 // GET
-	// render ejs
 exports.Render = function(req, res, next){
 	res.render('index', {title: index});
+};
+exports.AccountNanny = function(req, res, next){
+	let db = req.app.locals.db, users = db.collection('users');
+	users.find().toArray(function(err, results){
+		if (err) return next(err);
+		res.render('account-nanny', {users: results});		
+	});
+	
 };
 
 exports.RegisterNanny = function(req, res, next){
@@ -16,10 +23,10 @@ exports.RegisterNanny = function(req, res, next){
 exports.RegisterNannySave = function (req, res, next) {
     console.log("test");
 	var db = req.app.locals.db, users = db.collection('users'), body = req.body;
-	
-	users.insert({name:'test'},function(err, user){
+	console.log("post", body);
+	users.insert({nameAndSurname: body.nameAndSurname, address: body.address, personalCode: body.personalCode, email: body.email, password: body.password},function(err, user){
 				if (err) return next(err);
-				res.send({user:user.ops});
+				res.redirect('/account/nanny');
 			});
 		
 
@@ -47,5 +54,5 @@ exports.Item = function(req, res, next){
 // POST
 exports.Index = function(req, res, next){
 	var db = req.app.locals.db, body = req.body, type = body.type;
-	console.log('post', body);
+	console.log('post to index', body);
 };
