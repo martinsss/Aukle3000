@@ -21,5 +21,5 @@ exports.Item = function(req, res, next){
 // POST
 exports.Index = function(req, res, next){
 	var db = req.app.locals.db, body = req.body, type = body.type;
-	console.log('db', db);
+	console.log('db', db, body);
 };
