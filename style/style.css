@@ -167,3 +167,18 @@ li {
 	font-size: 20px;
 	font-weight: bold;
 }
+
+.margin-top {
+	padding-top: 70px;
+}
+
+.form-wrapper {
+
+}
+
+.sign-form-header {
+	font-family: 'Raleway', sans-serif;
+	font-size: 3em;
+	margin-top: 5px;
+	color: white;
+}
