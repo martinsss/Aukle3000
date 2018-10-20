@@ -7,6 +7,8 @@
 	<link href="style\style.css" rel="stylesheet" type="text/css">
 	<!-- additional code -->
 	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.47/js/bootstrap-datetimepicker.min.js"></script>
+	<link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
+
 
 <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.47/css/bootstrap-datetimepicker.css">
 
@@ -18,41 +20,28 @@
 </head>
 <body>
 	<!-- Navbar -->
-	<nav class="navbar navbar-expand-lg navbar-light bg-transparent">
-		<a class="navbar-brand" href="#">Auklė 3000</a>
-		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-			<span class="navbar-toggler-icon"></span>
-		</button>
-		<div class="collapse navbar-collapse" id="navbarSupportedContent">
-			<ul class="navbar-nav mr-auto">
-				<li class="nav-item active">
-					<a class="nav-link" href="#">Pagrindinis <span class="sr-only">(current)</span></a>
-				</li>
-				<li class="nav-item active">
-					<a class="nav-link" href="#">Auklės <span class="sr-only">(current)</span></a>
-				</li>
-			</li>		
-		</ul>
-	</div>
-</nav>
+
 
 <!-- First page -->
 <div class="make-me-fullscreen">
 	<div class="container">
 		<div class="row">
-			<div class="col-12">
+			<div class="col-lg-6">
 
+<div class="row">
+			<div class="col-md-8 col-sm-12">
 <!-- Form  -->
 <form class="form-horizontal">
 <fieldset>
 
 <!-- Form Name -->
-<legend>Suraskite auklę</legend>
-
 <!-- Select Basic -->
+<div class="form-style">
 <div class="form-group">
-  <label class="col-md-4 control-label" for="selectbasic"></label>
-  <div class="col-md-4">
+	<p class="form-name">Suraskite auklę!</p>
+
+  <label class="col-md-12 control-label" for="selectbasic"></label>
+  <div class="col-md-12">
     <select id="selectbasic" name="selectbasic" class="form-control">
       <option value="0">Pasirinkitę vietą</option>
       <option value="r1">Žirmūnai</option>
@@ -90,25 +79,27 @@
 </div>
 
 <!-- Date and time picker -->
+<div class="date-style">
 <div class="form-group time-date">
-	<label>Pradžios data</label> <br>
+
+	<label class="form-name-s">Pradžios data</label> <br>
 <input type="date" name="beginningDate ">
 <input type="time" name="beginningTime"> <br>
 
 
 <div class="form-group time-date">
-	<label>Pabaigos data</label> <br>
+	<label class="form-name-s">Pabaigos data</label> <br>
 <input type="date" name="endingDate">
 <input type="time" name="endingTime">
-
+</div>
 
 
 </div> 
 
 <!-- Select Basic -->
 <div class="form-group">
-  <label class="col-md-4 control-label" for=""></label>
-  <div class="col-md-4">
+  <label class="col-md-12 control-label" for=""></label>
+  <div class="col-md-12">
     <select id="" name="" class="form-control">
       <option value="0">Pasirinkite vaikų kiekį</option>
       <option value="1">1</option>
@@ -123,8 +114,8 @@
 
 <!-- Select Basic -->
 <div class="form-group">
-  <label class="col-md-4 control-label" for="selectbasic"></label>
-  <div class="col-md-4">
+  <label class="col-md-12 control-label" for="selectbasic"></label>
+  <div class="col-md-12">
     <select id="selectbasic" name="selectbasic" class="form-control">
       <option value="0">Ar turite gyvūną?</option>
       <option value="petDog">Šunys</option>
@@ -138,13 +129,13 @@
 <div class="form-group">
   <label class="col-md-4 control-label" for="singlebutton"></label>
   <div class="col-md-4">
-    <button id="singlebutton" name="singlebutton" class="btn btn-inverse">Ieškoti</button>
+    <button id="singlebutton" name="singlebutton" class="btn btn-light">Ieškoti</button>
   </div>
 </div>
 
 </fieldset>
 </form>
-
+</div>
 <!-- End of form -->
 
 </div>
