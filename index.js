@@ -25,7 +25,7 @@ app.use(passport.session()); // persistent login sessions
 app.use(flash()); // use connect-flash for flash messages stored in session
 require('./config/passport')(passport);
 
-const indexR = require('./routes/index')(app, passport);
+const indexR = require('./routes/index')(passport);
 
 // middleware
 app.use(helmet());
