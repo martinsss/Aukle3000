@@ -13,13 +13,21 @@ exports.RegisterNanny = function(req, res, next){
 	res.render('auth/sign-up-form-nanny', { message: req.flash('signupMessage') })
 };
 
-exports.RegisterNannySave = function (passport) {
+exports.RegisterNannySave = function (req, res, next) {
     console.log("test");
- return passport.authenticate('local-signup', {
+	var db = req.app.locals.db, users = db.collection('users'), body = req.body;
+	
+	users.insert({name:'test'},function(err, user){
+				if (err) return next(err);
+				res.send({user:user.ops});
+			});
+		
+
+/* return passport.authenticate('local-signup', {
         successRedirect : '/profile', // redirect to the secure profile section
         failureRedirect : '/register/nanny', // redirect back to the signup page if there is an error
         failureFlash : true // allow flash messages
-    });
+    });*/
 };
 
 /*exports.RegisterParent = function(req, res, next){

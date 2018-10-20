@@ -23,7 +23,7 @@ router.get('/item', Controller.Item);
 router.get('/register/nanny', Controller.RegisterNanny);
 
 // process the signup form
-router.post('/register/nanny', Controller.RegisterNannySave(passport));
+router.post('/register/nanny', Controller.RegisterNannySave);
 
 
  //router.get('/test', tictactoeController.test);
