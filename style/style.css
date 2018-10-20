@@ -1,0 +1,22 @@
+.make-me-fullscreen {
+	height: 100vh;
+	background-image: url('../images/baby-backgroud-dark.jpg');
+	background-size: cover;
+}
+
+.form-design {
+	width: 25%;
+	background-color: white;
+	padding: 25px;
+	border-radius: 10px;
+	margin-top: 100px;
+}
+
+.navbar {
+	background-color: transparent;
+}
+
+.form-group {
+	margin-top: 30px;
+	margin-bottom: 30px;
+}

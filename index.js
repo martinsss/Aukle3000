@@ -32,7 +32,9 @@ app.set('view engine', 'ejs');
 
 
 // static folder
-app.use(express.static(path.join(__dirname, 'static')));
+app.use('/js', express.static(path.join(__dirname, 'js')));
+app.use('/css', express.static(path.join(__dirname, 'style')));
+app.use('/images', express.static(path.join(__dirname, 'images')));
 app.use('/modules', express.static(__dirname + '/node_modules'));
 
 
