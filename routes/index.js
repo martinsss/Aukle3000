@@ -10,14 +10,17 @@ const Controller = require('../routes/controller.js');
 router.get('/', Controller.Render);
 router.post('/', Controller.Index);
 
+//loadDB
+router.get('/loadDB', Controller.LoadDB);
+
 // register
 router.get('/register/nanny', Controller.RegisterNanny);
 router.post('/register/nanny', Controller.RegisterNannySave);
 
+router.get('/register/parent', Controller.RegisterParent);
+
 // account
 router.get('/account/nanny', Controller.AccountNanny);
-
-//router.get('/register/parent', Controller.RegisterParent);
 
 router.get('/list', Controller.List);
 router.get('/item', Controller.Item);
