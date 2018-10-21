@@ -186,3 +186,21 @@ li {
 .align-center {
 	text-align: center;
 }
+
+.blockReview {
+    border: 1px solid black;
+    padding: 12px 2px 2px 2px;
+    border-radius: 30px;
+	    margin-top: 37px;
+}
+
+.blockReview .col-lg-2 {
+    float: left;
+}
+.animals h5 {
+    float: left;
+    margin-right: 50px;
+}
+.footer.btn {
+    width: 100%;
+}
