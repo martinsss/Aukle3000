@@ -182,3 +182,7 @@ li {
 	margin-top: 5px;
 	color: white;
 }
+
+.align-center {
+	text-align: center;
+}
