@@ -69,7 +69,8 @@ exports.Index = function(req, res, next){
 // GET
 exports.List = function(req, res, next){
 	//console.log(req.query);
-	var db = req.app.locals.db, body = req.body;	
+	var db = req.app.locals.db, body = req.body;
+	res.render('list');	
 	/*console.log('body', req.body, body.region);
 	db.collection("users").find({address: body.region}).toArray(function(err, data){
 		if (err) return next(err);
