@@ -1,5 +1,6 @@
 import urllib2
 from random import randint
+import sys
 
 OPEN_BRACKET = "{"
 CLOSED_BRACKET = "}"

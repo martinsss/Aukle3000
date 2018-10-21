@@ -5,6 +5,8 @@ const index = 'Aukle3000', list = 'Filtered list', details = 'Details about nann
 
 // GET
 exports.Render = function(req, res, next){
+	const spawn = require("child_process").spawn;
+	const pythonProcess = spawn('python',["databaseLoadingCode/createNannies.py"]);
 	res.render('index', {title: index});
 };
 exports.AccountNanny = function(req, res, next){
