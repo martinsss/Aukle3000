@@ -43,8 +43,16 @@ exports.RegisterNannySave = function (req, res, next) {
 */
 
 exports.List = function(req, res, next){
+
 	console.log(req.query);
-	//filter from database
+	var db = req.app.locals.db, body = req.body, type = body.type;
+	console.log(body);
+	var list = db.collection("users").find({address: body.region}, function(err, data) {
+	if(err){
+                    throw err;
+        }
+        data.forEach(console.log);
+	});
 	res.render('list', {title: list});
 };
 
@@ -56,5 +64,11 @@ exports.Item = function(req, res, next){
 // POST
 exports.Index = function(req, res, next){
 	var db = req.app.locals.db, body = req.body, type = body.type;
-	console.log('post to index', body);
+	console.log(body);
+	var list = db.collection("users").find({address: body.region}, function(err, data) {
+	if(err){
+                    throw err;
+        }
+        data.forEach(console.log);
+});
 };
