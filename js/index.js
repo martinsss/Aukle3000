@@ -1,4 +1,4 @@
-
+console.log('hi');
 
 $(".n-find").click(function(){
 	let $this = $(this), region = $(".n-region").val()

@@ -10,6 +10,8 @@ const Controller = require('../routes/controller.js');
 router.get('/', Controller.Render);
 router.post('/', Controller.Index);
 
+router.get('/account/sign-up-form-parents', Controller.FormParents);
+
 //loadDB
 router.get('/loadDB', Controller.LoadDB);
 

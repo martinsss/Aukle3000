@@ -18,10 +18,12 @@ exports.AccountNanny = function(req, res, next){
 	
 };
 
-
+exports.FormParents = function(req, res, next){
+	res.render('auth/sign-up-form-parents');
+}
 
 exports.RegisterNanny = function(req, res, next){
-	res.render('auth/sign-up-form-nanny', { message: req.flash('signupMessage') })
+	res.render('auth/sign-up-form-nanny', { message: req.flash('signupMessage') });
 };
 
 exports.RegisterNannySave = function (req, res, next) {
