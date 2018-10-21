@@ -46,14 +46,11 @@ exports.List = function(req, res, next){
 
 	console.log(req.query);
 	var db = req.app.locals.db, body = req.body, type = body.type;
-	console.log(body);
-	var list = db.collection("users").find({address: body.region}, function(err, data) {
-	if(err){
-                    throw err;
-        }
-        data.forEach(console.log);
+	db.collection("users").find({address: body.region}).toArray(function(err, data){
+		if (err) return next(err);
+		console.log('data', data)
+		res.render('list', {list: data});
 	});
-	res.render('list', {title: list});
 };
 
 exports.Item = function(req, res, next){
