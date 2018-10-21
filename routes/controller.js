@@ -37,10 +37,10 @@ exports.RegisterNannySave = function (req, res, next) {
     });*/
 };
 
-/*exports.RegisterParent = function(req, res, next){
-	res.render('register_parent', {title: index});
+exports.RegisterParent = function(req, res, next){
+	res.render('auth/sign-up-form-parents', {data: ''});
 };
-*/
+
 
 exports.List = function(req, res, next){
 
